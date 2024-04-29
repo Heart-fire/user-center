@@ -1,4 +1,4 @@
--- auto-generated definition
+# auto-generated definition
 create table user
 (
     id           bigint auto_increment
