@@ -4,7 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 /**
- * 通用返回类型
+ * 通用返回类
  * @param <T>
  */
 @Data
