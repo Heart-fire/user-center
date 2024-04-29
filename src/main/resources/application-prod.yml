@@ -1,0 +1,19 @@
+#项目名
+spring:
+      # DataSource Config
+  # 新版本为com.mysql.cj.jdbc.Driver
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://****:3306/user_center
+    username: qqqq
+    password: 11111
+  # session失效时间
+  session:
+    timeout: 86400
+
+
+
+
+
+
+
