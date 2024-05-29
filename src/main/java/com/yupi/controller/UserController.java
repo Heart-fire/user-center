@@ -1,6 +1,7 @@
 package com.yupi.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.sun.net.httpserver.Authenticator;
 import com.yupi.common.BaseResponse;
 import com.yupi.common.ErrorCode;
 import com.yupi.common.ResultUtil;
@@ -29,6 +30,8 @@ import static com.yupi.constant.UserConstant.USER_LOGIN_STATE;
 //@RestController适用于编写restful风格的api,返回值默认为json类型
 @RequestMapping("/user")
 @RestController//咱们这个类里面所有的请求的接口返回值，响应的数据类型都是application json
+@CrossOrigin(origins =
+        {"http://localhost:8000"},allowCredentials = "true")
 public class UserController {
 
     @Resource//spring提供的注解
@@ -78,8 +81,8 @@ public class UserController {
        if (request == null){
            throw new BusinessException(ErrorCode.PARAMS_ERROR);
        }
-        int result = userService.userLogout(request);
-        return ResultUtil.success(result);
+        userService.userLogout(request);
+        throw new BusinessException(ErrorCode.PARAMS_ERROR,"退出登录成功，欢迎下次拜访，祝您生活愉快！");
     }
     //---------------------------------------------------------------------
 
